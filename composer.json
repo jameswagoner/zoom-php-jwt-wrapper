@@ -1,0 +1,15 @@
+{
+    "name": "jameswagoner/zoom-php-jwt-wrapper",
+    "description": "Zoom API PHP wrapper with JWT authentication",
+    "type": "library",
+    "require": {
+        "lcobucci/jwt": "^3.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "James Wagoner",
+            "email": "jameswagoner@gmail.com"
+        }
+    ]
+}
