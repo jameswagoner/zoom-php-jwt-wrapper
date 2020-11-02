@@ -4,7 +4,7 @@ namespace WAGoner\ZoomWrapper;
 
 use PHPUnit\Framework\TestCase;
 
-class ClientTest extends TestCase
+class ZoomTest extends TestCase
 {
 
     public function testKeysAreSet()
