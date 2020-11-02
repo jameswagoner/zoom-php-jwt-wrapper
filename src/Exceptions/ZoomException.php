@@ -2,7 +2,7 @@
 
 namespace WAGoner\ZoomWrapper\Exceptions;
 
-class ClientException extends \Exception
+class ZoomException extends \Exception
 {
 
 }

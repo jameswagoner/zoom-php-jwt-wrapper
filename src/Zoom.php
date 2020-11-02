@@ -5,9 +5,9 @@ namespace WAGoner\ZoomWrapper;
 use Lcobucci\JWT\Builder;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
 use Lcobucci\JWT\Signer\Key;
-use WAGoner\ZoomWrapper\Exceptions\ClientException;
+use WAGoner\ZoomWrapper\Exceptions\ZoomException;
 
-class Client
+class Zoom
 {
     /**
      * @var null
@@ -27,18 +27,18 @@ class Client
      * @param null $apiKey
      * @param null $apiSecret
      *
-     * @throws ClientException
+     * @throws ZoomException
      */
     public function __construct($apiKey = null, $apiSecret = null) {
         if (is_null($apiKey)) {
             if (is_null($this->apiKey)) {
-                throw new ClientException('No API Key provided, and non is globally set.');
+                throw new ZoomException('No API Key provided, and non is globally set.');
             }
         }
 
         if (is_null($apiSecret)) {
             if (is_null($this->apiSecret)) {
-                throw new ClientException('No API Secret provided, and non is globally set.');
+                throw new ZoomException('No API Secret provided, and non is globally set.');
             }
         }
 

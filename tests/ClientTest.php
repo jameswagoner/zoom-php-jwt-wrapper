@@ -9,14 +9,14 @@ class ClientTest extends TestCase
 
     public function testKeysAreSet()
     {
-        new Client('apiKey', 'apiSecret');
-        $this->assertClassHasAttribute('apiKey', '\WAGoner\ZoomWrapper\Client');
-        $this->assertClassHasAttribute('apiSecret', '\WAGoner\ZoomWrapper\Client');
+        new Zoom('apiKey', 'apiSecret');
+        $this->assertClassHasAttribute('apiKey', '\WAGoner\ZoomWrapper\Zoom');
+        $this->assertClassHasAttribute('apiSecret', '\WAGoner\ZoomWrapper\Zoom');
     }
 
     public function testJwtIsGenerated()
     {
-        $client = new Client('apiKey', 'apiSecret');
+        $client = new Zoom('apiKey', 'apiSecret');
         $client->setJWT();
 
         $this->assertNotNull($client->getJWT());
