@@ -5,20 +5,25 @@ namespace WAGoner\Zoom;
 use Lcobucci\JWT\Builder;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
 use Lcobucci\JWT\Signer\Key;
+use Lcobucci\JWT\Token;
+use Lcobucci\JWT\ValidationData;
 use WAGoner\Zoom\Exceptions\ZoomException;
 
 class Zoom
 {
     /**
-     * @var null
+     * @var string
      */
     private $apiKey;
 
     /**
-     * @var null
+     * @var string
      */
     private $apiSecret;
 
+    /**
+     * @var Token
+     */
     private $jwt;
 
     /**
@@ -46,23 +51,56 @@ class Zoom
         $this->apiSecret = $apiSecret;
     }
 
-    public function setJWT()
+    /**
+     * Sets generated JWT
+     */
+    public function setJWT() : void
     {
         $this->jwt = $this->generateJWT();
     }
 
-    public function getJWT()
+    /**
+     * Gets generated JWT
+     *
+     * @return Token
+     */
+    public function getJWT() : ?Token
     {
-        return $this->jwt;
+        if ($this->validateJWT()) {
+            return $this->jwt;
+        }
+
+        return null;
     }
 
-    private function generateJWT() {
+    /**
+     * Builds and signs JWT
+     *
+     * @return Token
+     */
+    private function generateJWT() : Token
+    {
         $signer = new Sha256;
         $key = new Key($this->apiSecret);
 
-        return (new Builder())->issuedBy($this->apiKey)
+        return (new Builder)
+            ->issuedBy($this->apiKey)
             ->expiresAt(time() + 3600)
             ->getToken($signer, $key);
+    }
 
+    /**
+     * Validates JWT
+     *
+     * @return bool
+     */
+    private function validateJWT() : bool
+    {
+        $data = new ValidationData();
+
+        $data->setIssuer($this->apiKey);
+        $data->setCurrentTime(time() + 61);
+
+        return $this->jwt->validate($data);
     }
 }
