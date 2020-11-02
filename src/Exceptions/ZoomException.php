@@ -1,8 +1,10 @@
 <?php
 
-namespace WAGoner\ZoomWrapper\Exceptions;
+namespace WAGoner\Zoom\Exceptions;
 
-class ZoomException extends \Exception
+use Exception;
+
+class ZoomException extends Exception
 {
 
 }

@@ -36,7 +36,7 @@ $ composer require jameswagoner/zoom-php-jwt-wrapper
 ## Usage
 
 ``` php
-$skeleton = new WAGoner\ZoomWrapper();
+$skeleton = new WAGoner\Zoom();
 echo $skeleton->echoPhrase('Hello, League!');
 ```
 

@@ -16,12 +16,12 @@
     },
     "autoload": {
         "psr-4": {
-            "WAGoner\\ZoomWrapper\\": "src/"
+            "WAGoner\\Zoom\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "WAGoner\\ZoomWrapper\\Test\\": "tests/"
+            "WAGoner\\Zoom\\Test\\": "tests/"
         }
     },
     "scripts": {

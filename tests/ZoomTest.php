@@ -1,9 +1,9 @@
 <?php
 
-namespace WAGoner\ZoomWrapper\Test;
+namespace WAGoner\Zoom\Test;
 
 use PHPUnit\Framework\TestCase;
-use WAGoner\ZoomWrapper\Zoom;
+use WAGoner\Zoom\Zoom;
 
 class ZoomTest extends TestCase
 {
@@ -11,8 +11,8 @@ class ZoomTest extends TestCase
     public function testKeysAreSet()
     {
         new Zoom('apiKey', 'apiSecret');
-        $this->assertClassHasAttribute('apiKey', '\WAGoner\ZoomWrapper\Zoom');
-        $this->assertClassHasAttribute('apiSecret', '\WAGoner\ZoomWrapper\Zoom');
+        $this->assertClassHasAttribute('apiKey', Zoom::class);
+        $this->assertClassHasAttribute('apiSecret', Zoom::class);
     }
 
     public function testJwtIsGenerated()
