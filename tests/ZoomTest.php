@@ -1,8 +1,9 @@
 <?php
 
-namespace WAGoner\ZoomWrapper;
+namespace WAGoner\ZoomWrapper\Test;
 
 use PHPUnit\Framework\TestCase;
+use WAGoner\ZoomWrapper\Zoom;
 
 class ZoomTest extends TestCase
 {
