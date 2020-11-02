@@ -9,12 +9,10 @@ use WAGoner\Zoom\Zoom;
 class ZoomTest extends TestCase
 {
 
-    public function testKeysAreSet()
+    public function testMissingApiKeyRaisesException()
     {
-        new Zoom('apiKey', 'apiSecret');
-
-        $this->assertClassHasAttribute('apiKey', Zoom::class);
-        $this->assertClassHasAttribute('apiSecret', Zoom::class);
+        $this->expectExceptionMessage('No API Key and Secret provided');
+        new Zoom();
     }
 
     public function testJwtIsGenerated()

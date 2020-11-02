@@ -35,16 +35,8 @@ class Zoom
      * @throws ZoomException
      */
     public function __construct($apiKey = null, $apiSecret = null) {
-        if (is_null($apiKey)) {
-            if (is_null($this->apiKey)) {
-                throw new ZoomException('No API Key provided, and non is globally set.');
-            }
-        }
-
-        if (is_null($apiSecret)) {
-            if (is_null($this->apiSecret)) {
-                throw new ZoomException('No API Secret provided, and non is globally set.');
-            }
+        if (is_null($apiKey) && is_null($apiSecret)) {
+            throw new ZoomException('No API Key and Secret provided');
         }
 
         $this->apiKey = $apiKey;
