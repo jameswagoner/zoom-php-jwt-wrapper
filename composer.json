@@ -10,12 +10,21 @@
     ],
     "type": "library",
     "require": {
-        "php": "7.3",
-        "lcobucci/jwt": "^3.3"
+        "php": ">=7.3",
+        "lcobucci/jwt": "^3.3",
+        "phpunit/phpunit": "^9.4"
     },
     "autoload": {
         "psr-4": {
-            "WAGoner\\ZoomWrapper\\": "src/"
+            "WAGoner\\ZoomWrapper\\": "src"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WAGoner\\ZoomWrapper\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }
