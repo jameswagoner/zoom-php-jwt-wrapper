@@ -1,11 +1,11 @@
 {
-    "name": "wagoner/zoom-php-jwt-wrapper",
+    "name": "Wagoner/zoom-php-jwt-wrapper",
     "description": "Zoom API PHP wrapper with JWT authentication",
     "license": "MIT",
     "authors": [
         {
             "name": "James Wagoner",
-            "email": "jameswagoner@gmail.com"
+            "email": "jamesWagoner@gmail.com"
         }
     ],
     "type": "library",
@@ -16,12 +16,12 @@
     },
     "autoload": {
         "psr-4": {
-            "WAGoner\\Zoom\\": "src/"
+            "Wagoner\\Zoom\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "WAGoner\\Zoom\\Test\\": "tests/"
+            "Wagoner\\Zoom\\Test\\": "tests/"
         }
     },
     "scripts": {

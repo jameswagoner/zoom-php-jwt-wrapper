@@ -1,10 +1,10 @@
 <?php
 
-namespace WAGoner\Zoom\Test;
+namespace Wagoner\Zoom\Test;
 
 use Lcobucci\JWT\Token;
 use PHPUnit\Framework\TestCase;
-use WAGoner\Zoom\Zoom;
+use Wagoner\Zoom\Zoom;
 
 class ZoomTest extends TestCase
 {

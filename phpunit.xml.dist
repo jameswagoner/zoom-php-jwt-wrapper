@@ -18,7 +18,7 @@
     </include>
   </coverage>
   <testsuites>
-    <testsuite name="WAGoner Test Suite">
+    <testsuite name="Wagoner Test Suite">
       <directory>tests</directory>
     </testsuite>
   </testsuites>

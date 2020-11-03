@@ -1,13 +1,13 @@
 <?php
 
-namespace WAGoner\Zoom;
+namespace Wagoner\Zoom;
 
 use Lcobucci\JWT\Builder;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
 use Lcobucci\JWT\Signer\Key;
 use Lcobucci\JWT\Token;
 use Lcobucci\JWT\ValidationData;
-use WAGoner\Zoom\Exceptions\ZoomException;
+use Wagoner\Zoom\Exceptions\ZoomException;
 
 class Zoom
 {
@@ -29,13 +29,14 @@ class Zoom
     /**
      * Client constructor.
      *
-     * @param null $apiKey
-     * @param null $apiSecret
+     * @param string $apiKey
+     * @param string $apiSecret
      *
      * @throws ZoomException
      */
-    public function __construct($apiKey = null, $apiSecret = null) {
-        if (is_null($apiKey) && is_null($apiSecret)) {
+    public function __construct(string $apiKey, string $apiSecret)
+    {
+        if (is_null($apiKey) || is_null($apiSecret)) {
             throw new ZoomException('No API Key and Secret provided');
         }
 

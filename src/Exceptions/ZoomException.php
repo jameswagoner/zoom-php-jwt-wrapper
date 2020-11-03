@@ -1,6 +1,6 @@
 <?php
 
-namespace WAGoner\Zoom\Exceptions;
+namespace Wagoner\Zoom\Exceptions;
 
 use Exception;
 
