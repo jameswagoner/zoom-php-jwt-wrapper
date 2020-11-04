@@ -11,7 +11,7 @@ class ZoomTest extends TestCase
 
     public function testMissingApiKeyRaisesException()
     {
-        $this->expectExceptionMessage('No API Key and Secret provided');
+        $this->expectException('ArgumentCountError');
         new Zoom();
     }
 

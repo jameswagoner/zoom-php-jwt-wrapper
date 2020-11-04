@@ -1,5 +1,5 @@
 {
-    "name": "Wagoner/zoom-php-jwt-wrapper",
+    "name": "wagoner/zoom-php-jwt-wrapper",
     "description": "Zoom API PHP wrapper with JWT authentication",
     "license": "MIT",
     "authors": [
@@ -11,8 +11,10 @@
     "type": "library",
     "require": {
         "php": ">=7.3",
+        "ext-json": "*",
         "lcobucci/jwt": "^3.3",
-        "phpunit/phpunit": "^9.4"
+        "phpunit/phpunit": "^9.4",
+        "guzzlehttp/guzzle": "^6.5"
     },
     "autoload": {
         "psr-4": {
